@@ -1,0 +1,248 @@
+Testcases for the given assignment.
+----------------------------------------------------------------
+
+Input:
+6
+007201b3
+00720863
+00c0006f
+00533623
+100004b7
+00c50493
+Output:
+add x3, x4, x7
+beq x4, x7, L1
+jal x0, L1
+sd x5, 12(x6)
+lui x9, 0x10000
+L1:addi x9, x10, 12
+
+Input:
+10
+003100b3
+403100b3
+003140b3
+003160b3
+003170b3
+003110b3
+003150b3
+403150b3
+003120b3
+003130b3
+Ouput:
+add x1, x2, x3
+sub x1, x2, x3
+xor x1, x2, x3
+or x1, x2, x3
+and x1, x2, x3
+sll x1, x2, x3
+srl x1, x2, x3
+sra x1, x2, x3
+slt x1, x2, x3
+sltu x1, x2, x3
+
+Input:
+9
+00a10093
+00a14093
+00a16093
+00a17093
+00a11093
+00a15093
+40a15093
+00a12093
+00a13093
+Output:
+addi x1, x2, 10
+xori x1, x2, 10
+ori x1, x2, 10
+andi x1, x2, 10
+slli x1, x2, 10
+srli x1, x2, 10
+srai x1, x2, 10
+slti x1, x2, 10
+sltiu x1, x2, 10
+
+Input:
+7
+00a10083
+00a11083
+00a12083
+00a13083
+00a14083
+00a15083
+00a16083
+Output:
+lb x1, 10(x2)
+lh x1, 10(x2)
+lw x1, 10(x2)
+ld x1, 10(x2)
+lbu x1, 10(x2)
+lhu x1, 10(x2)
+lwu x1, 10(x2)
+
+Input:
+3
+000100e7
+00a38267
+068b09e7
+Output:
+jalr x1, x2, 0
+jalr x4, x7, 10
+jalr x19, x22, 104
+
+Input:
+2
+0440016f
+02c0046f
+Output:
+jal x2, 68
+jal x8, 44
+
+Input:
+1
+100000b7
+Output:
+lui x1, 0x10000
+
+Input:
+1
+14321897
+Output:
+auipc x17, 0x14321
+
+Input:
+8
+00208c63
+00419c63
+00208863
+00419863
+00208463
+00419463
+00000033
+00000033
+Output:
+beq x1, x2, L1
+bne x3, x4, L2
+beq x1, x2, L1
+bne x3, x4, L2
+beq x1, x2, L1
+bne x3, x4, L2
+L1:add x0, x0, x0
+L2:add x0, x0, x0
+
+
+----------------------------------------------------------------
+Complex Input:
+
+54
+003100b3
+40628233
+009473b3
+00c5e533
+00f746b3
+01289833
+015a59b3
+418bdb33
+064d0c93
+0ffe7d93
+04356493
+7ff1c193
+00421193
+00335293
+40245393
+00012083
+00823183
+01031283
+01840383
+02056483
+02865583
+03074683
+00f82023
+01193423
+013a1823
+015b0c23
+02208263
+02419463
+0262c663
+0283d863
+02a4ea63
+02c5fc63
+03c006ef
+0c478767
+10000837
+003100b3
+02000e63
+40628233
+02000a63
+009473b3
+02000663
+00c5e533
+02000263
+00f746b3
+00000e63
+01289833
+00000a63
+015a59b3
+00000663
+418bdb33
+00000263
+80000cb7
+07bc8c93
+01902023
+
+Output :
+add x1, x2, x3
+sub x4, x5, x6
+and x7, x8, x9
+or x10, x11, x12
+xor x13, x14, x15
+sll x16, x17, x18
+srl x19, x20, x21
+sra x22, x23, x24
+addi x25, x26, 100
+andi x27, x28, 255
+ori x9, x10, 67
+xori x3, x3, 2047
+slli x3, x4, 4
+srli x5, x6, 3
+srai x7, x8, 2
+lw x1, 0(x2)
+ld x3, 8(x4)
+lh x5, 16(x6)
+lb x7, 24(x8)
+lwu x9, 32(x10)
+lhu x11, 40(x12)
+lbu x13, 48(x14)
+sw x15, 0(x16)
+sd x17, 8(x18)
+sh x19, 16(x20)
+sb x21, 24(x22)
+beq x1, x2, L1
+bne x3, x4, L2
+blt x5, x6, L3
+bge x7, x8, L4
+bltu x9, x10, L5
+bgeu x11, x12, L6
+jal x13, L7
+jalr x14, x15, L8
+lui x16, 0x10000
+L1:add x1, x2, x3
+beq x0, x0, L9
+L2:sub x4, x5, x6
+beq x0, x0, L9
+L3:and x7, x8, x9
+beq x0, x0, L9
+L4:or x10, x11, x12
+beq x0, x0, L9
+L5:xor x13, x14, x15
+beq x0, x0, L9
+L6:sll x16, x17, x18
+beq x0, x0, L9
+L7:srl x19, x20, x21
+beq x0, x0, L9
+L8:sra x22, x23, x24
+beq x0, x0, L9
+L9:lui x25, 0x80000
+addi x25, x25, 123
+sw x25, 0(x0)
