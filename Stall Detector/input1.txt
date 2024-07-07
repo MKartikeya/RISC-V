@@ -1,0 +1,4 @@
+ld x3, 0(x7)
+add x16, x5, x5
+sd x5, 15(x16)
+add x3, x3, x3
